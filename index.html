@@ -86,17 +86,17 @@ button:active {
 <script src="bluetoothle.js"></script>
 
 <script type="text/javascript">
-var resultado;
+var res;
 
 function cifra(){
 	$("#num").html('se entra');
-	resultado=bluetoothle.initialize(resultado, { "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"});
+	res=bluetoothle.initialize(resultado, { "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"});
 	$("#num").html('se sale');
 }
 
 function resultado(){
 	$("#memo").html('Se me invoca');
-	$("#num").html(resultado.["status"]);
+	$("#num").html(res.["status"]);
 }
   
 $(
