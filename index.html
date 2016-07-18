@@ -89,14 +89,14 @@ button:active {
 var res;
 
 function cifra(){
-	$("#num").html('se entra');
-	res=bluetoothle.initialize(resultado, { "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"});
-	$("#num").html('se sale');
+	$("#num").html('Se entra.');
+	bluetoothle.initialize(resultado, { "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"});
+	$("#num").html('Se sale');
 }
 
-function resultado(){
+function resultado(kk){
 	$("#memo").html('Se me invoca');
-	$("#parent").html(res["status"]);
+	$("#parent").html(kk["status"]);
 }
   
 $(
@@ -124,7 +124,7 @@ $(
 <div id="contenido"><br/>
   <div id="num" contentEditable="true">0</div> 
   <div>	
-  <div class="botonera" id="parent"></div><div class="botonera"id="deg">RAD</div><div class="botonera"><button id="H0" class="btnum">H0</button></div>
+  <div class="botonera" id="parent">...</div><div class="botonera"id="deg">RAD</div><div class="botonera"><button id="H0" class="btnum">H0</button></div>
   <br>
   </div>
   Memoria:
