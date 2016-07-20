@@ -86,17 +86,23 @@ button:active {
 <script src="bluetoothle.js"></script>
 
 <script type="text/javascript">
-var res;
+var res={ "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"};
+
 
 function cifra(){
 	$("#num").html('Se entra.');
-	bluetoothle.initialize(resultado, { "request": true, "statusReceiver": false, "restoreKey": "bluetoothleplugin"});
+	bluetoothle.initialize(resultado, res);
 	$("#num").html('Se sale');
 }
 
 function resultado(kk){
 	$("#memo").html('Se me invoca');
 	$("#parent").html(kk);
+	var texto='';
+	for(var i in res){
+		texto+=i+": "+res[i]+'.<br>';
+	}
+	$("#res").html(texto);
 }
   
 $(
@@ -130,6 +136,8 @@ $(
   Memoria:
   <div id="memo" contentEditable="true" class="draggable">0</div>
   <br/>
+  res:
+  <div id="res" contentEditable="true" class="draggable">...</div>
 </div>
 </body>
 </html>
