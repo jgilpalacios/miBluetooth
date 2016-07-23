@@ -103,6 +103,11 @@ function resultado(kk){
 		texto+=i+": "+res[i]+'.<br>';
 	}
 	$("#res").html(texto);
+	texto="";
+	for (var i in this){
+		texto+=i+": "+ this[i] '.<br>';
+	}
+	$("#bien").html(texto);
 }
   
 $(
@@ -138,6 +143,8 @@ $(
   <br/>
   res:
   <div id="res" contentEditable="true" class="draggable">...</div>
+  bien:
+  <div id="bien" contentEditable="true" class="draggable">...</div>
 </div>
 </body>
 </html>
