@@ -95,8 +95,12 @@ function cifra(){
 	$("#num").html('Se sale');
 }
 
-function resultado(kk){
+function resultado(){
 	$("#memo").html('Se me invoca');
+	var kk="argumentos::<br>";
+	for (var i=0; i<arguments.length;i++){
+		kk+=i+": "+arguments[i]+".<br>";
+	}
 	$("#parent").html(kk);
 	var texto='';
 	for(var i in res){
@@ -105,7 +109,7 @@ function resultado(kk){
 	$("#res").html(texto);
 	texto="";
 	for (var i in bluetoothle){
-		texto+=i+": "+ bluetoothle[i]+'.<br>';
+		texto+=i+": "/*+ bluetoothle[i]+'.<br>'*/;
 	}
 	$("#bien").html(texto);
 }
